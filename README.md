@@ -13,7 +13,7 @@
 ## 📁 Daftar dan Pembagian Tugas Modul
 Berikut ini fitur-fitur yang tersedia di LiteraLoka:
 ### 🗃️ Main Page - Nando
-
+ans
 
 ### 💰 Penjualan Buku User - Chika
 Modul ini hanya dapat digunakan oleh user yang sedang login untuk menjual buku mereka ke LiteraLoka. Pada page penjualan buku, user dapat menjual buku dengan cara menginput judul, tahun terbit, dan lainnya pada form pengisian. Pada form ini user juga dapat menginput foto dari buku yang akan dijual. Setelah submit form, buku akan ditampilkan pada dataset penjualan.
