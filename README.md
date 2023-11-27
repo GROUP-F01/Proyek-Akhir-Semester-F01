@@ -33,6 +33,10 @@ Modul ini hanya dapat digunakan oleh user yang sedang login. Modul ini bertujuan
 ## Peran Aplikasi
 
 ## Alur Pengintegrasian dengan Web Service
+* Membuat fungsi baru untuk menerima request dan mengirimkan respon ke aplikasi mobile dengan method GET dan POST.
+* Pada flutter aplikasi mobile, menambahkan request ke url fungsi tersebut dan mengolah data yang didapatkan dari hasil request.
+* Web service django memberikan response dalam bentuk JSON.
+* Melakukan debugging dan memperbaiki apabila ada error atau hal lainnya sampai aplikasi berjalan dengan baik dan memenuhi ketentuan yang diinginkan.
 
 ## Tautan Berita Acara
 [Tautan Berita Acara](https://docs.google.com/spreadsheets/d/1OgDLNwG6hoevTCDRE_hrmAe9ShIobUsRR0xR4fEhtlg/edit#gid=0)
