@@ -9,11 +9,12 @@
 * [Leticia Kalila Darlene](https://github.com/leticiakalila) (2206830561)
 
 ## Deskripsi Aplikasi Flutter
+LiteraLoka merupakan aplikasi yang berfokus kepada penjualan buku untuk dapat memudahkan akses kepada buku-buku yang berkualitas bagi masyarakat Indonesia. Di LiteraLoka, user dapat membeli, menjual, bahkan menulis resensi buku.
 
 ## 📁 Daftar dan Pembagian Tugas Modul
 Berikut ini fitur-fitur yang tersedia di LiteraLoka:
 ### 🗃️ Main Page - Nando
-answer
+Homepage adalah modul yang akan menjadi halaman utama aplikasi. Pada halaman ini, akan ditampilkan seluruh dataset buku dan seluruh halaman lainnya akan terintegrasi melalui halaman aplikasi ini. Halaman ini juga akan menerapkan filter.
 
 ### 💰 Penjualan Buku User - Chika
 Modul ini hanya dapat digunakan oleh user yang sedang login untuk menjual buku mereka ke LiteraLoka. Pada page penjualan buku, user dapat menjual buku dengan cara menginput judul, tahun terbit, dan lainnya pada form pengisian. Pada form ini user juga dapat menginput foto dari buku yang akan dijual. Setelah submit form, buku akan ditampilkan pada dataset penjualan.
@@ -31,6 +32,10 @@ Modul ini hanya dapat digunakan oleh user yang sedang login untuk menulis resens
 Modul ini hanya dapat digunakan oleh user yang sedang login. Modul ini bertujuan untuk menampilkan urutan buku-buku terbaik menurut user yang dinilai dari rating yang diberikan untuk buku tersebut. Pada modul ini user dapat memberi rating sekaligus menulis komentar singkat untuk buku tersebut.
 
 ## Peran Aplikasi
+| Role  | Description |
+| ------------- | ------------- |
+| User | User disini adalah pengunjung yang punya akun dan sedang login, user bisa menggunakan semua modul kecuali manajemen inventori |
+| Guest | Guest adalah pengunjung tanpa akun atau sedang tidak login, guest hanya bisa melihat main page, katalog, halaman review, dan halaman resensi. Guest tidak bisa membeli, menjual, dan mengunggah hal apapun ke website LiteraLoka |
 
 ## Alur Pengintegrasian dengan Web Service
 * Membuat fungsi baru untuk menerima request dan mengirimkan respon ke aplikasi mobile dengan method GET dan POST.
