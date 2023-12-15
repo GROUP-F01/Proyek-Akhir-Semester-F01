@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:literaloka/main/menu.dart';
+import 'package:literaloka/review/screens/review.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -79,7 +80,7 @@ class LeftDrawer extends StatelessWidget {
             leading: const Icon(Icons.rate_review_outlined),
             title: const Text('Review'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => MyHomePage(),
