@@ -1,5 +1,6 @@
 import 'package:literaloka/main/menu.dart';
 import 'package:flutter/material.dart';
+import 'package:literaloka/user/register.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
@@ -105,6 +106,18 @@ class _LoginPageState extends State<LoginPage> {
                                 }
                             },
                             child: const Text('Login'),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (context) => RegisterPage()),
+                            );
+                          },
+                          child: const Text(
+                            'Don\'t have an account? Register here',
+                            style: TextStyle(color: Colors.teal),
+                          ),
                         ),
                     ],
                 ),
