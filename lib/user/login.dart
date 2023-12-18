@@ -59,6 +59,8 @@ class _LoginPageState extends State<LoginPage> {
                             controller: _usernameController,
                             decoration: const InputDecoration(
                                 labelText: 'Username',
+                                border: OutlineInputBorder(),
+                                prefixIcon: Icon(Icons.person),
                             ),
                         ),
                         const SizedBox(height: 12.0),
@@ -66,6 +68,8 @@ class _LoginPageState extends State<LoginPage> {
                             controller: _passwordController,
                             decoration: const InputDecoration(
                                 labelText: 'Password',
+                                border: OutlineInputBorder(),
+                                prefixIcon: Icon(Icons.lock),
                             ),
                             obscureText: true,
                         ),
@@ -113,16 +117,27 @@ class _LoginPageState extends State<LoginPage> {
                             },
                             child: const Text('Login'),
                         ),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(builder: (context) => const RegisterPage()),
-                            );
-                          },
-                          child: const Text(
-                            'Don\'t have an account? Register here',
-                            style: TextStyle(color: Colors.teal),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 16.0), // Adjust the top padding as needed
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => const RegisterPage()),
+                              );
+                            },
+                            borderRadius: BorderRadius.circular(8.0), // Adjust the border radius as needed
+                            child: Container(
+                              padding: const EdgeInsets.all(8.0),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.0), // Adjust the border radius as needed
+                                color: Colors.transparent, // Set the background color to be transparent
+                              ),
+                              child: const Text(
+                                'Don\'t have an account? Register here',
+                                style: TextStyle(color: Colors.teal),
+                              ),
+                            ),
                           ),
                         ),
                     ],

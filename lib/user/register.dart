@@ -140,8 +140,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 }
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.teal,
-                foregroundColor: Colors.white,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
                 shape: RoundedRectangleBorder(
@@ -150,16 +148,26 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               child: const Text('Register'),
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
-                );
-              },
-              child: const Text(
-                'Already have an account? Login',
-                style: TextStyle(color: Colors.teal),
+            Padding(
+              padding: const EdgeInsets.only(top: 16.0), // Adjust the top padding as needed
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                  );
+                },
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.all(8.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0), // Adjust the border radius as needed
+                    side: BorderSide.none, // Remove the visible border
+                  ),
+                ),
+                child: const Text(
+                  'Already have an account? Login',
+                  style: TextStyle(color: Colors.teal),
+                ),
               ),
             ),
           ],
