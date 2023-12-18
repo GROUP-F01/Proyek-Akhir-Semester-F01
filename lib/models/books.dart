@@ -40,7 +40,7 @@ class Fields {
     String imageUrl;
     String lang;
     int price;
-    int rating;
+    double rating;
 
     Fields({
         required this.isbn,
