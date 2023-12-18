@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:literaloka/main/left_drawer.dart';
-import 'package:literaloka/main/nav_card.dart';
+import 'package:literaloka/widgets/left_drawer.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
@@ -14,7 +13,6 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const LeftDrawer(),
       appBar: AppBar(
         title: const Text(
           'Literaloka',
@@ -33,7 +31,7 @@ class MyHomePage extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                 // Widget Text untuk menampilkan tulisan dengan alignment center dan style yang sesuai
                 child: Text(
-                  'Main Menu', // Text yang menandakan toko
+                  'Main Page', // Text yang menandakan toko
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,
@@ -48,12 +46,8 @@ class MyHomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
-                crossAxisCount: 4,
+                crossAxisCount: 3,
                 shrinkWrap: true,
-                children: items.map((NavItem item) {
-                  // Iterasi untuk setiap item
-                  return NavCard(item);
-                }).toList(),
               ),
             ],
           ),
