@@ -38,7 +38,7 @@ class Fields {
     int pageCount;
     String category;
     String imageUrl;
-    Lang lang;
+    String lang;
     int price;
     double rating;
 
@@ -67,7 +67,7 @@ class Fields {
         pageCount: json["page_count"],
         category: json["category"],
         imageUrl: json["image_url"],
-        lang: langValues.map[json["lang"]]!,
+        lang: json["lang"],
         price: json["price"],
         rating: json["rating"],
     );
@@ -82,7 +82,7 @@ class Fields {
         "page_count": pageCount,
         "category": category,
         "image_url": imageUrl,
-        "lang": langValues.reverse[lang],
+        "lang": lang,
         "price": price,
         "rating": rating,
     };
@@ -95,7 +95,8 @@ enum Lang {
     INIKKN,
     KO,
     PT_BR,
-    TA
+    TA,
+    
 }
 
 final langValues = EnumValues({
