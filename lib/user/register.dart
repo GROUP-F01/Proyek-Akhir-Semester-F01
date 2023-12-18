@@ -45,7 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
           style: TextStyle(
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
-            color: Colors.teal,
+            color: Colors.black,
           ),
         ),
         centerTitle: true,

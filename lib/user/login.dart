@@ -39,8 +39,17 @@ class _LoginPageState extends State<LoginPage> {
         final request = context.watch<CookieRequest>();
         return Scaffold(
             appBar: AppBar(
-                title: const Text('Login'),
-            ),
+                title: const Text(
+                  'Login',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                centerTitle: true,
+                elevation: 0,
+              ),
             body: Container(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(

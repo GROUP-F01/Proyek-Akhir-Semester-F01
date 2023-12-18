@@ -38,7 +38,7 @@ class Fields {
     int pageCount;
     String category;
     String imageUrl;
-    Lang lang;
+    String lang;
     int price;
     int rating;
 
@@ -67,7 +67,7 @@ class Fields {
         pageCount: json["page_count"],
         category: json["category"],
         imageUrl: json["image_url"],
-        lang: langValues.map[json["lang"]]!,
+        lang: json["lang"],
         price: json["price"],
         rating: json["rating"],
     );
