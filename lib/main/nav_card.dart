@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:literaloka/jual_buku/screens/buku_user.dart';
 import 'package:literaloka/jual_buku/screens/katalog.dart';
-import 'package:literaloka/user/login.dart';
+import 'package:literaloka/main/login.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 

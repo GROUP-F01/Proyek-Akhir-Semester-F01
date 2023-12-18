@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:literaloka/user/login.dart';
+import 'package:literaloka/main/login.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
