@@ -25,7 +25,8 @@ class _EditResensiPageState extends State<EditResensiPage> {
   @override
   void initState() {
     super.initState();
-    _resensiController = TextEditingController(text: widget.resensi.fields.resensi);
+    _resensiController =
+        TextEditingController(text: widget.resensi.fields.resensi);
   }
 
   @override
@@ -39,8 +40,8 @@ class _EditResensiPageState extends State<EditResensiPage> {
     final request = context.watch<CookieRequest>();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(78,217,148,1),
-        foregroundColor: Colors.black,
+        backgroundColor: const Color.fromARGB(255, 52, 235, 146),
+        foregroundColor: Colors.white,
         title: const Center(
           child: Text(
             'Edit Resensi',

@@ -38,14 +38,14 @@ class _AllResensiPageState extends State<AllResensiPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-            'Resensi',
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-            ),
+          'Resensi',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
           ),
-        backgroundColor: const Color.fromRGBO(78,217,148,1),
-        foregroundColor: Colors.black,
+        ),
+        backgroundColor: const Color.fromARGB(255, 52, 235, 146),
+        foregroundColor: Colors.white,
       ),
       drawer: const LeftDrawer(),
       body: SingleChildScrollView(
@@ -64,10 +64,12 @@ class _AllResensiPageState extends State<AllResensiPage> {
                   } else if (!snapshot.hasData ||
                       snapshot.data!.isEmpty ||
                       snapshot.hasError) {
-                    return Center(
-                      child: 
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
                         SizedBox(
-                          width: 200.0,
+                          width: width,
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(
@@ -80,11 +82,13 @@ class _AllResensiPageState extends State<AllResensiPage> {
                               'Balik ke Katalog',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
                         ),
+                      ],
                     );
                   } else {
                     return GridView.builder(
@@ -93,7 +97,7 @@ class _AllResensiPageState extends State<AllResensiPage> {
                         crossAxisCount: 1,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
-                        childAspectRatio: 2 / 1,
+                        childAspectRatio: 2 / 1.5,
                       ),
                       primary: false,
                       shrinkWrap: true,

@@ -4,10 +4,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:literaloka/checkout/widgets/checkout.dart';
 import 'package:literaloka/jual_buku/screens/katalog.dart';
-import 'package:literaloka/widgets/left_drawer.dart';
 import 'package:literaloka/models/beli_buku.dart';
 import 'package:literaloka/models/buku.dart';
 import 'package:literaloka/models/keranjang.dart';
+import 'package:literaloka/widgets/left_drawer.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
@@ -23,8 +23,8 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
   late Future<Keranjang> keranjang;
 
   Future<List<BeliBuku>> fetchKeranjangUser(request) async {
-    var response = await request
-        .get("https://literaloka.my.id/cart_checkout/show_keranjang/");
+    var response =
+        await request.get("https://literaloka.my.id/cart_checkout/show_keranjang/");
 
     List<BeliBuku> listBuku = [];
     for (var d in response) {
@@ -62,12 +62,12 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-            'Keranjang User',
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-            ),
+          'Keranjang User',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
           ),
+        ),
         backgroundColor: const Color.fromRGBO(78,217,148,1),
         foregroundColor: Colors.black,
       ),
@@ -79,7 +79,7 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
           children: [
             SizedBox(height: width * 0.05),
             SizedBox(
-              width: 200.0,
+              width: width,
               child: ElevatedButton(
                 onPressed: () async {
                   showDialog<void>(
@@ -95,7 +95,8 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
             SizedBox(height: width * 0.02),
             FutureBuilder<Keranjang>(
               future: keranjang,
-              builder: (BuildContext context, AsyncSnapshot<Keranjang> snapshot) {
+              builder:
+                  (BuildContext context, AsyncSnapshot<Keranjang> snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   // Display a loading indicator while waiting for the future to complete
                   return const CircularProgressIndicator();
@@ -107,7 +108,8 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
                   return const Text('No data available');
                 } else {
                   // When data is available, display the total price
-                  return Text('Total Harga: ${snapshot.data!.fields.harga.toString()}');
+                  return Text(
+                      'Total Harga: ${snapshot.data!.fields.harga.toString()}');
                 }
               },
             ),
@@ -155,7 +157,7 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
                         crossAxisCount: 1,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
-                        childAspectRatio: 2 / 1,
+                        childAspectRatio: 2 / 1.5,
                       ),
                       primary: false,
                       shrinkWrap: true,
@@ -223,20 +225,17 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  SingleChildScrollView(
-                                    scrollDirection: Axis.vertical,
-                                    child: Container(
-                                      height: screenHeight * 0.20,
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        snapshot.data!.fields.title.length > 40
-                                            ? "${snapshot.data!.fields.title.substring(0, 40)}..."
-                                            : snapshot.data!.fields.title,
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20,
-                                        ),
+                                  Container(
+                                    height: screenHeight * 0.20,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      snapshot.data!.fields.title.length > 40
+                                          ? "${snapshot.data!.fields.title.substring(0, 40)}..."
+                                          : snapshot.data!.fields.title,
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
                                       ),
                                     ),
                                   ),

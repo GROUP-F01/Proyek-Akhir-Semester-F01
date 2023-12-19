@@ -25,8 +25,8 @@ class _CreateResensiPageState extends State<CreateResensiPage> {
     final request = context.watch<CookieRequest>();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(78,217,148,1),
-        foregroundColor: Colors.black,
+        backgroundColor: const Color.fromARGB(255, 52, 235, 146),
+        foregroundColor: Colors.white,
         title: const Center(
           child: Text(
             'Buat Resensi',

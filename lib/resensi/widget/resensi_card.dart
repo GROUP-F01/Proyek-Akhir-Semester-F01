@@ -59,7 +59,7 @@ class ResensiCard extends StatelessWidget {
                                     BorderRadius.all(Radius.circular(10)),
                               ),
                               width: screenWidth * 0.3,
-                              height: screenHeight * 0.25,
+                              height: screenHeight * 0.2,
                               child: Image.network(
                                 snapshot.data!.fields.imageUrl,
                                 fit: BoxFit.cover,
@@ -87,20 +87,14 @@ class ResensiCard extends StatelessWidget {
                                   fontSize: 15,
                                 ),
                               ),
-                              SingleChildScrollView(
-                                scrollDirection: Axis.vertical,
-                                child: Container(
-                                  height: 150, // Specify the desired height
-                                  child: Text(
-                                    resensi.fields.resensi.length > 300
-                                        ? "${resensi.fields.resensi.substring(0, 300)}..."
-                                        : resensi.fields.resensi,
-                                    textAlign: TextAlign.justify,
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.normal,
-                                      fontSize: 10,
-                                    ),
-                                  ),
+                              Text(
+                                resensi.fields.resensi.length > 300
+                                    ? "${resensi.fields.resensi.substring(0, 300)}..."
+                                    : resensi.fields.resensi,
+                                textAlign: TextAlign.justify,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 10,
                                 ),
                               ),
                             ]),
@@ -255,7 +249,8 @@ class ResensiCard extends StatelessWidget {
                           ),
                         );
                       }
-                    }),
+                    }
+                ),
               ],
             ),
           ),
