@@ -49,6 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 centerTitle: true,
                 elevation: 0,
+                backgroundColor: const Color.fromRGBO(78,217,148,1),
               ),
             body: Container(
                 padding: const EdgeInsets.all(16.0),
@@ -80,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                                 String password = _passwordController.text;
 
                                 // Cek kredensial
-                                final response = await request.login("http://127.0.0.1:8000/auth/login/", {
+                                final response = await request.login("https://literaloka.my.id/auth/login/", {
                                 'username': username,
                                 'password': password,
                                 });
@@ -90,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                                     String uname = response['username'];
                                     Navigator.pushReplacement(
                                         context,
-                                        MaterialPageRoute(builder: (context) => const MyHomePage()),
+                                        MaterialPageRoute(builder: (context) => MyHomePage()),
                                     );
                                     ScaffoldMessenger.of(context)
                                         ..hideCurrentSnackBar()

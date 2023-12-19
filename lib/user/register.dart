@@ -50,6 +50,7 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
         centerTitle: true,
         elevation: 0,
+        backgroundColor: const Color.fromRGBO(78,217,148,1),
       ),
       body: Container(
         padding: const EdgeInsets.all(16.0),
@@ -101,7 +102,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   return;
                 }
                 final response = await request.post(
-                  "http://127.0.0.1:8000/auth/register/",
+                  "https://literaloka.my.id/auth/register/",
                   {
                     'username': username,
                     'password': password,

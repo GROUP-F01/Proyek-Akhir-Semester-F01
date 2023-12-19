@@ -1,28 +1,32 @@
+// To parse this JSON data, do
+//
+//     final buku = bukuFromJson(jsonString);
+
 import 'dart:convert';
 
-List<Books> booksFromJson(String str) => List<Books>.from(json.decode(str).map((x) => Books.fromJson(x)));
+Buku bukuFromJson(String str) => Buku.fromJson(json.decode(str));
 
-String booksToJson(List<Books> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String bukuToJson(Buku data) => json.encode(data.toJson());
 
-class Books {
-    Model model;
+class Buku {
+    String model;
     int pk;
     Fields fields;
 
-    Books({
+    Buku({
         required this.model,
         required this.pk,
         required this.fields,
     });
 
-    factory Books.fromJson(Map<String, dynamic> json) => Books(
-        model: modelValues.map[json["model"]]!,
+    factory Buku.fromJson(Map<String, dynamic> json) => Buku(
+        model: json["model"],
         pk: json["pk"],
         fields: Fields.fromJson(json["fields"]),
     );
 
     Map<String, dynamic> toJson() => {
-        "model": modelValues.reverse[model],
+        "model": model,
         "pk": pk,
         "fields": fields.toJson(),
     };
@@ -34,13 +38,12 @@ class Fields {
     String description;
     String author;
     String publisher;
-    DateTime publicationDate;
+    String publicationDate;
     int pageCount;
     String category;
     String imageUrl;
     String lang;
     int price;
-    double rating;
 
     Fields({
         required this.isbn,
@@ -54,7 +57,6 @@ class Fields {
         required this.imageUrl,
         required this.lang,
         required this.price,
-        required this.rating,
     });
 
     factory Fields.fromJson(Map<String, dynamic> json) => Fields(
@@ -63,13 +65,12 @@ class Fields {
         description: json["description"],
         author: json["author"],
         publisher: json["publisher"],
-        publicationDate: DateTime.parse(json["publication_date"]),
+        publicationDate: json["publication_date"],
         pageCount: json["page_count"],
         category: json["category"],
         imageUrl: json["image_url"],
         lang: json["lang"],
         price: json["price"],
-        rating: json["rating"],
     );
 
     Map<String, dynamic> toJson() => {
@@ -78,52 +79,11 @@ class Fields {
         "description": description,
         "author": author,
         "publisher": publisher,
-        "publication_date": "${publicationDate.year.toString().padLeft(4, '0')}-${publicationDate.month.toString().padLeft(2, '0')}-${publicationDate.day.toString().padLeft(2, '0')}",
+        "publication_date": "publicationDate",
         "page_count": pageCount,
         "category": category,
         "image_url": imageUrl,
         "lang": lang,
         "price": price,
-        "rating": rating,
     };
-}
-
-enum Lang {
-    DE,
-    EN,
-    ID,
-    INIKKN,
-    KO,
-    PT_BR,
-    TA
-}
-
-final langValues = EnumValues({
-    "de": Lang.DE,
-    "en": Lang.EN,
-    "id": Lang.ID,
-    "inikkn": Lang.INIKKN,
-    "ko": Lang.KO,
-    "pt-BR": Lang.PT_BR,
-    "ta": Lang.TA
-});
-
-enum Model {
-    MAIN_BUKU
-}
-
-final modelValues = EnumValues({
-    "main.buku": Model.MAIN_BUKU
-});
-
-class EnumValues<T> {
-    Map<String, T> map;
-    late Map<T, String> reverseMap;
-
-    EnumValues(this.map);
-
-    Map<T, String> get reverse {
-        reverseMap = map.map((k, v) => MapEntry(v, k));
-        return reverseMap;
-    }
 }
