@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:literaloka/main/menu.dart';
+import 'package:literaloka/wishlist/screens/login.dart';
+import 'package:literaloka/wishlist/screens/wishlist.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
 
 class LeftDrawer extends StatelessWidget {
-  const LeftDrawer({super.key});
+  final CookieRequest request;
+
+  const LeftDrawer(this.request, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +41,7 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MyHomePage(),
+                    builder: (context) => MyHomePage(request),
                   ));
             },
           ),
@@ -47,7 +52,7 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MyHomePage(),
+                    builder: (context) => MyHomePage(request),
                   ));
             },
             // Bagian redirection ke ShopFormPage
@@ -59,7 +64,7 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MyHomePage(),
+                    builder: (context) => WishlistPage(request),
                   ));
             },
             // Bagian redirection ke ShopFormPage
@@ -71,7 +76,7 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MyHomePage(),
+                    builder: (context) => MyHomePage(request),
                   ));
             },
           ),
@@ -82,7 +87,7 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MyHomePage(),
+                    builder: (context) => MyHomePage(request),
                   ));
             },
           ),
@@ -93,7 +98,7 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MyHomePage(),
+                    builder: (context) => MyHomePage(request),
                   ));
             },
           ),
@@ -104,7 +109,30 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MyHomePage(),
+                    builder: (context) => MyHomePage(request),
+                  ));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.logout),
+            title: const Text('Login'),
+            onTap: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(),
+                  ));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.shopping_basket),
+            title: const Text('Daftar Produk'),
+            onTap: () {
+                // Route menu ke halaman produk
+                Navigator.push(
+                context,
+                 MaterialPageRoute(
+                    builder: (context) => MyHomePage(request),
                   ));
             },
           ),

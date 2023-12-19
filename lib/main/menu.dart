@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:literaloka/widgets/left_drawer.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  final CookieRequest request;
+
+  const MyHomePage(this.request, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,7 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
       ),
-      drawer: const LeftDrawer(),
+      drawer: LeftDrawer(request),
       body: SingleChildScrollView(
         // Widget wrapper yang dapat discroll
         child: Padding(
