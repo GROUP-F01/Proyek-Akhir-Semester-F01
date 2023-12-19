@@ -19,7 +19,7 @@ class AllResensiPage extends StatefulWidget {
 class _AllResensiPageState extends State<AllResensiPage> {
   Future<List<Resensi>> fetchAllResensi(request) async {
     var response =
-        await request.get("http://127.0.0.1:8000/resensi/get_resensi/");
+        await request.get("http://10.0.2.2:8000/resensi/get_resensi/");
 
     List<Resensi> listAllResensi = [];
     for (var d in response) {
@@ -97,7 +97,7 @@ class _AllResensiPageState extends State<AllResensiPage> {
                         crossAxisCount: 1,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
-                        childAspectRatio: 2 / 1,
+                        childAspectRatio: 2 / 1.5,
                       ),
                       primary: false,
                       shrinkWrap: true,

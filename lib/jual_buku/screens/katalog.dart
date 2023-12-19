@@ -20,7 +20,7 @@ class KatalogPage extends StatefulWidget {
 class _KatalogPageState extends State<KatalogPage> {
   Future<List<Buku>> fetchBuku(request) async {
     var response = await request.get(
-      'http://127.0.0.1:8000/jualbuku/all_buku_flutter/',
+      'http://10.0.2.2:8000/jualbuku/all_buku_flutter/',
     );
 
     List<Buku> listBuku = [];
@@ -145,7 +145,7 @@ class _KatalogPageState extends State<KatalogPage> {
                                           ),
                                           onPressed: () async {
                                             final response = await request.postJson(
-                                                "http://127.0.0.1:8000/cart_checkout/tambah_keranjang/",
+                                                "http://10.0.2.2:8000/cart_checkout/tambah_keranjang/",
                                                 jsonEncode(<String, String>{
                                                   'pk': snapshot.data![index].pk
                                                       .toString()

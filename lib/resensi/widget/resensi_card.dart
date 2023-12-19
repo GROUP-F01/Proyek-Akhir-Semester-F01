@@ -16,7 +16,7 @@ class ResensiCard extends StatelessWidget {
 
   Future<Buku> fetchBuku(request) async {
     var response = await request.postJson(
-        "http://127.0.0.1:8000/resensi/get_book/",
+        "http://10.0.2.2:8000/resensi/get_book/",
         jsonEncode(<String, String>{
           'pk': resensi.fields.book.toString(),
         }));
@@ -59,7 +59,7 @@ class ResensiCard extends StatelessWidget {
                                     BorderRadius.all(Radius.circular(10)),
                               ),
                               width: screenWidth * 0.3,
-                              height: screenHeight * 0.25,
+                              height: screenHeight * 0.2,
                               child: Image.network(
                                 snapshot.data!.fields.imageUrl,
                                 fit: BoxFit.cover,
@@ -226,7 +226,7 @@ class ResensiCard extends StatelessWidget {
                                       child: ElevatedButton(
                                           onPressed: () async {
                                             final response = await request.postJson(
-                                                "http://127.0.0.1:8000/resensi/delete_resensi/",
+                                                "http://10.0.2.2:8000/resensi/delete_resensi/",
                                                 jsonEncode(<String, String>{
                                                   'resensi_id':
                                                       resensi.pk.toString(),

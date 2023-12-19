@@ -70,13 +70,13 @@ class LeftDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.book_rounded),
-            title: const Text('Buku User'),
+            title: const Text('Jual Buku'),
             // Bagian redirection ke ShopFormPage
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const BukuUserPage(),
+                  builder: (context) => const JualBukuPage(),
                 ),
               );
             },

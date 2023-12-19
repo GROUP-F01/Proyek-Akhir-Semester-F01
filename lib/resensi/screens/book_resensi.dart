@@ -23,7 +23,7 @@ class BookResensiPage extends StatefulWidget {
 class _BookResensiPageState extends State<BookResensiPage> {
   Future<List<Resensi>> fetchBookResensi(request) async {
     var response = await request.postJson(
-        "http://127.0.0.1:8000/resensi/resensi_buku/",
+        "http://10.0.2.2:8000/resensi/resensi_buku/",
         jsonEncode(<String, String>{
           'pk': widget.buku.pk.toString(),
         }));
@@ -104,7 +104,7 @@ class _BookResensiPageState extends State<BookResensiPage> {
                         crossAxisCount: 1,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
-                        childAspectRatio: 2 / 1,
+                        childAspectRatio: 2 / 1.5,
                       ),
                       primary: false,
                       shrinkWrap: true,

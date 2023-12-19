@@ -40,35 +40,30 @@ class NavCard extends StatelessWidget {
                 builder: (context) => KatalogPage(),
               ),
             );
-          }
-          else if (item.name == "Keranjang") {
+          } else if (item.name == "Keranjang") {
             Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => KeranjangUserPage(),
               ),
             );
-          }
-          else if (item.name == "Buku User") {
+          } else if (item.name == "Jual Buku") {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => BukuUserPage(),
+                builder: (context) => JualBukuPage(),
               ),
             );
-          }
-          else if (item.name == "Resensi Buku") {
+          } else if (item.name == "Resensi Buku") {
             Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => AllResensiPage(),
               ),
             );
-          } 
-          else if (item.name == "Logout") {
-            final response = await request.logout(
-                "http://127.0.0.1:8000/auth/logout/"
-              );
+          } else if (item.name == "Logout") {
+            final response =
+                await request.logout("http://10.0.2.2:8000/auth/logout/");
             String message = response["message"];
             if (response['status']) {
               String uname = response["username"];

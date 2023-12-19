@@ -92,7 +92,7 @@ class _CreateResensiPageState extends State<CreateResensiPage> {
                               onPressed: () async {
                                 if (_formKey.currentState!.validate()) {
                                   final response = await request.postJson(
-                                      "http://127.0.0.1:8000/resensi/create_resensi/",
+                                      "http://10.0.2.2:8000/resensi/create_resensi/",
                                       jsonEncode(<String, String>{
                                         'pk': widget.buku.pk.toString(),
                                         'resensi': text,

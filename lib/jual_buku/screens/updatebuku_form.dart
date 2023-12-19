@@ -288,7 +288,7 @@ class _UpdateBukuFormPageState extends State<UpdateBukuFormPage> {
                               onPressed: () async {
                                 if (_formKey.currentState!.validate()) {
                                   final response = await request.postJson(
-                                      "http://127.0.0.1:8000/jualbuku/update_buku_flutter/",
+                                      "http://10.0.2.2:8000/jualbuku/update_buku_flutter/",
                                       jsonEncode(<String, String>{
                                         'pk': widget.buku.pk.toString(),
                                         'isbn': isbn,
@@ -308,7 +308,7 @@ class _UpdateBukuFormPageState extends State<UpdateBukuFormPage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const BukuUserPage()),
+                                              const JualBukuPage()),
                                     );
                                   }
                                 }

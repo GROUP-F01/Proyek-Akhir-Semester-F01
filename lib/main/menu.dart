@@ -8,7 +8,7 @@ class MyHomePage extends StatelessWidget {
   final List<NavItem> items = [
     NavItem("Katalog", Icons.add_shopping_cart, Colors.indigo),
     NavItem("Keranjang", Icons.shopping_cart, Colors.indigo),
-    NavItem("Buku User", Icons.book_rounded, Colors.indigo),
+    NavItem("Jual Buku", Icons.book_rounded, Colors.indigo),
     NavItem("Resensi Buku", Icons.reviews, Colors.indigo),
     NavItem("Logout", Icons.logout, Colors.red),
   ];
@@ -50,7 +50,7 @@ class MyHomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
-                crossAxisCount: 4,
+                crossAxisCount: 3,
                 shrinkWrap: true,
                 children: items.map((NavItem item) {
                   // Iterasi untuk setiap item

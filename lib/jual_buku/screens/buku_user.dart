@@ -11,18 +11,18 @@ import 'package:literaloka/models/buku.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
-class BukuUserPage extends StatefulWidget {
-  const BukuUserPage({Key? key}) : super(key: key);
+class JualBukuPage extends StatefulWidget {
+  const JualBukuPage({Key? key}) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
-  _BukuUserPageState createState() => _BukuUserPageState();
+  _JualBukuPageState createState() => _JualBukuPageState();
 }
 
-class _BukuUserPageState extends State<BukuUserPage> {
+class _JualBukuPageState extends State<JualBukuPage> {
   Future<List<Buku>> fetchBukuUser(request) async {
     var response =
-        await request.get("http://127.0.0.1:8000/jualbuku/show_buku_flutter/");
+        await request.get("http://10.0.2.2:8000/jualbuku/show_buku_flutter/");
 
     List<Buku> listBukuUser = [];
     for (var d in response) {
@@ -42,7 +42,7 @@ class _BukuUserPageState extends State<BukuUserPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Buku User',
+          'Jual Buku',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -59,7 +59,7 @@ class _BukuUserPageState extends State<BukuUserPage> {
           children: [
             SizedBox(height: width * 0.05),
             SizedBox(
-              width: width * 0.8,
+              width: width,
               child: ElevatedButton(
                 onPressed: () async {
                   Navigator.push(
@@ -87,7 +87,7 @@ class _BukuUserPageState extends State<BukuUserPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
-                          width: width * 0.7,
+                          width: width,
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(
@@ -112,7 +112,7 @@ class _BukuUserPageState extends State<BukuUserPage> {
                     return GridView.builder(
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 4,
+                        crossAxisCount: 3,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
                         childAspectRatio: 1 / 2,
@@ -300,14 +300,14 @@ class _BukuUserPageState extends State<BukuUserPage> {
                             ),
                             onPressed: () async {
                               await request.postJson(
-                                  "http://127.0.0.1:8000/jualbuku/delete_buku_flutter/",
+                                  "http://10.0.2.2:8000/jualbuku/delete_buku_flutter/",
                                   jsonEncode(<String, String>{
                                     'pk': buku.pk.toString(),
                                   }));
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const BukuUserPage()),
+                                    builder: (context) => const JualBukuPage()),
                               );
                             })),
                   ),

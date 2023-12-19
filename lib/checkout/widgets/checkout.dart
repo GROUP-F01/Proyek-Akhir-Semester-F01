@@ -81,7 +81,7 @@ class _CheckoutDialogState extends State<CheckoutDialog> {
           onPressed: () async {
             if (_formKey.currentState!.validate()) {
               final response = await request.postJson(
-                  "http://127.0.0.1:8000/cart_checkout/checkout_keranjang/",
+                  "http://10.0.2.2:8000/cart_checkout/checkout_keranjang/",
                   jsonEncode(<String, String>{
                     'nama': nama,
                     'alamat': alamat,

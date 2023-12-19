@@ -25,7 +25,8 @@ class _EditResensiPageState extends State<EditResensiPage> {
   @override
   void initState() {
     super.initState();
-    _resensiController = TextEditingController(text: widget.resensi.fields.resensi);
+    _resensiController =
+        TextEditingController(text: widget.resensi.fields.resensi);
   }
 
   @override
@@ -102,7 +103,7 @@ class _EditResensiPageState extends State<EditResensiPage> {
                               onPressed: () async {
                                 if (_formKey.currentState!.validate()) {
                                   final response = await request.postJson(
-                                      "http://127.0.0.1:8000/resensi/edit_resensi/",
+                                      "http://10.0.2.2:8000/resensi/edit_resensi/",
                                       jsonEncode(<String, String>{
                                         'resensi_id':
                                             widget.resensi.pk.toString(),

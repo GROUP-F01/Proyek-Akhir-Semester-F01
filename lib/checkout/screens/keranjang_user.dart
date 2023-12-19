@@ -23,8 +23,8 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
   late Future<Keranjang> keranjang;
 
   Future<List<BeliBuku>> fetchKeranjangUser(request) async {
-    var response = await request
-        .get("http://127.0.0.1:8000/cart_checkout/show_keranjang/");
+    var response =
+        await request.get("http://10.0.2.2:8000/cart_checkout/show_keranjang/");
 
     List<BeliBuku> listBuku = [];
     for (var d in response) {
@@ -37,7 +37,7 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
 
   Future<Buku> fetchBuku(request, int pk) async {
     var response = await request.postJson(
-        "http://127.0.0.1:8000/cart_checkout/ambil_buku/",
+        "http://10.0.2.2:8000/cart_checkout/ambil_buku/",
         jsonEncode(<String, String>{
           'pk': pk.toString(),
         }));
@@ -47,7 +47,7 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
 
   Future<Keranjang> fetchKeranjang(request) async {
     var response = await request.get(
-      "http://127.0.0.1:8000/cart_checkout/list_keranjang/",
+      "http://10.0.2.2:8000/cart_checkout/list_keranjang/",
     );
 
     return Keranjang.fromJson(response.first);
@@ -95,7 +95,8 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
             SizedBox(height: width * 0.02),
             FutureBuilder<Keranjang>(
               future: keranjang,
-              builder: (BuildContext context, AsyncSnapshot<Keranjang> snapshot) {
+              builder:
+                  (BuildContext context, AsyncSnapshot<Keranjang> snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   // Display a loading indicator while waiting for the future to complete
                   return const CircularProgressIndicator();
@@ -107,7 +108,8 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
                   return const Text('No data available');
                 } else {
                   // When data is available, display the total price
-                  return Text('Total Harga: ${snapshot.data!.fields.harga.toString()}');
+                  return Text(
+                      'Total Harga: ${snapshot.data!.fields.harga.toString()}');
                 }
               },
             ),
@@ -155,7 +157,7 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
                         crossAxisCount: 1,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
-                        childAspectRatio: 2 / 1,
+                        childAspectRatio: 2 / 1.5,
                       ),
                       primary: false,
                       shrinkWrap: true,
@@ -247,7 +249,7 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
                                         child: ElevatedButton(
                                           onPressed: () async {
                                             final response = await request.postJson(
-                                                "http://127.0.0.1:8000/cart_checkout/delete_buku/",
+                                                "http://10.0.2.2:8000/cart_checkout/delete_buku/",
                                                 jsonEncode(<String, String>{
                                                   'beli_id': beli.pk.toString(),
                                                 }));
@@ -273,7 +275,7 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
                                         child: ElevatedButton(
                                           onPressed: () async {
                                             final response = await request.postJson(
-                                                "http://127.0.0.1:8000/cart_checkout/tambah_keranjang/",
+                                                "http://10.0.2.2:8000/cart_checkout/tambah_keranjang/",
                                                 jsonEncode(<String, String>{
                                                   'pk': snapshot.data!.pk
                                                       .toString(),
