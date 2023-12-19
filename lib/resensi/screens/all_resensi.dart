@@ -86,32 +86,6 @@ class _AllResensiPageState extends State<AllResensiPage> {
                           ),
                         ),
                     );
-                    // return Column(
-                    //   mainAxisAlignment: MainAxisAlignment.center,
-                    //   crossAxisAlignment: CrossAxisAlignment.center,
-                    //   children: [
-                    //     SizedBox(
-                    //       width: 200.0,
-                    //       child: ElevatedButton(
-                    //         onPressed: () {
-                    //           Navigator.push(
-                    //               context,
-                    //               MaterialPageRoute(
-                    //                 builder: (context) => const KatalogPage(),
-                    //               ));
-                    //         },
-                    //         child: const Text(
-                    //           'Balik ke Katalog',
-                    //           textAlign: TextAlign.center,
-                    //           style: TextStyle(
-                    //             fontSize: 15,
-                    //             fontWeight: FontWeight.bold,
-                    //           ),
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ],
-                    // );
                   } else {
                     return GridView.builder(
                       gridDelegate:

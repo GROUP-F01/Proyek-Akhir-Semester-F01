@@ -223,17 +223,20 @@ class _KeranjangUserPageState extends State<KeranjangUserPage> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  Container(
-                                    height: screenHeight * 0.20,
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      snapshot.data!.fields.title.length > 40
-                                          ? "${snapshot.data!.fields.title.substring(0, 40)}..."
-                                          : snapshot.data!.fields.title,
-                                      textAlign: TextAlign.center,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20,
+                                  SingleChildScrollView(
+                                    scrollDirection: Axis.vertical,
+                                    child: Container(
+                                      height: screenHeight * 0.20,
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        snapshot.data!.fields.title.length > 40
+                                            ? "${snapshot.data!.fields.title.substring(0, 40)}..."
+                                            : snapshot.data!.fields.title,
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20,
+                                        ),
                                       ),
                                     ),
                                   ),

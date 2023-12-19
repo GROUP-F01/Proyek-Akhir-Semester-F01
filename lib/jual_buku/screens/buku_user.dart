@@ -151,28 +151,28 @@ class _BukuUserPageState extends State<BukuUserPage> {
         child: Container(
           height: screenHeight * 0.3,
           width: width * 0.4,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                flex: 6,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      top: 8.0, left: 8.0, right: 8.0, bottom: 8.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image.network(
-                      buku.fields.imageUrl,
-                      fit: BoxFit.cover,
-                      height: screenHeight * 0.3,
-                      width: double.infinity,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(
+                  height: screenHeight / 2,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        top: 8.0, left: 8.0, right: 8.0, bottom: 8.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Image.network(
+                        buku.fields.imageUrl,
+                        fit: BoxFit.cover,
+                        height: screenHeight * 0.3,
+                        width: double.infinity,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Expanded(
-                flex: 4,
-                child: Padding(
+                Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -195,8 +195,8 @@ class _BukuUserPageState extends State<BukuUserPage> {
                     ],
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

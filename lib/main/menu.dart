@@ -79,31 +79,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         backgroundColor: const Color.fromRGBO(78,217,148,1),
         foregroundColor: Colors.black,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              width: 250.0,
-              child: TextField(
-                controller: searchController,
-                onChanged: (value) {
-                  bookSearched = value;
-                },
-                decoration: InputDecoration(
-                  labelText: 'Search by title',
-                  labelStyle: const TextStyle(color: Colors.black),
-                  prefixIcon: const Icon(Icons.search, color: Colors.black),
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.black),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
       ),
       drawer: const LeftDrawer(),
       body: SingleChildScrollView(

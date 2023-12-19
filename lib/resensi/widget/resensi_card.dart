@@ -87,14 +87,20 @@ class ResensiCard extends StatelessWidget {
                                   fontSize: 15,
                                 ),
                               ),
-                              Text(
-                                resensi.fields.resensi.length > 300
-                                    ? "${resensi.fields.resensi.substring(0, 300)}..."
-                                    : resensi.fields.resensi,
-                                textAlign: TextAlign.justify,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 10,
+                              SingleChildScrollView(
+                                scrollDirection: Axis.vertical,
+                                child: Container(
+                                  height: 150, // Specify the desired height
+                                  child: Text(
+                                    resensi.fields.resensi.length > 300
+                                        ? "${resensi.fields.resensi.substring(0, 300)}..."
+                                        : resensi.fields.resensi,
+                                    textAlign: TextAlign.justify,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 10,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ]),
