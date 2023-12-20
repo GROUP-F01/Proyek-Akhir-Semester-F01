@@ -16,7 +16,7 @@ class WishlistCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: Colors.black,
@@ -41,7 +41,7 @@ class WishlistCard extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             "Category: $bookCategory",
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.bold,
             ),
@@ -49,15 +49,15 @@ class WishlistCard extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             "Title: $bookTitle",
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 30.0,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             "Reason: $reason",
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.bold,
             ),
