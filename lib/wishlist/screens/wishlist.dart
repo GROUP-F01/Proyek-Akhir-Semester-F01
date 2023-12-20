@@ -1,46 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:literaloka/main/menu.dart';
 import 'package:literaloka/widgets/left_drawer.dart';
-import 'package:literaloka/models/wishlist.dart';
-import 'package:literaloka/wishlist/wishlist_form.dart';
+import 'package:literaloka/wishlist/models/wishlist.dart';
+import 'package:literaloka/wishlist/screens/wishlist_form.dart';
 import 'package:literaloka/wishlist/widgets/wishlist_card.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
-import 'package:provider/provider.dart';
 
 class WishlistPage extends StatefulWidget {
-  const WishlistPage({Key? key}) : super(key: key);
+  final CookieRequest request;
+
+  const WishlistPage(this.request, {Key? key}) : super(key: key);
 
   @override
-  _WishlistState createState() => _WishlistState();
+  _WishlistState createState() => _WishlistState(request);
 }
 
 class _WishlistState extends State<WishlistPage> {
   late Future<dynamic> wishlistItems;
+  final CookieRequest request;
+
+  _WishlistState(this.request);
+
+  // void _addToWishlist(String bookTitle, String reason) {
+  //   setState(() {
+  //     wishlistItems.add(WishlistItem(bookTitle: bookTitle, reason: reason));
+  //   });
+  // }
+  Future<dynamic> fetchProduct() async {
+    final response =
+        await request.get('http://127.0.0.1:8000/wishlist/get-wishlist/');
+
+    List<Wishlist> listWishlist = [];
+
+    for (var item in response['wishlist']) {
+      listWishlist.add(Wishlist.fromJson(item));
+    }
+
+    return listWishlist;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    wishlistItems = fetchProduct();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final request = context.watch<CookieRequest>();
-
-      Future<dynamic> fetchProduct() async {
-      final response =
-          await request.get('http://127.0.0.1:8000/wishlist/get-wishlist/');
-
-      List<Wishlist> listWishlist = [];
-
-      for (var item in response['wishlist']) {
-        listWishlist.add(Wishlist.fromJson(item));
-      }
-
-      return listWishlist;
-    }
-
-    @override
-    void initState() {
-      super.initState();
-      wishlistItems = fetchProduct(); // Initialize the list here or fetch it from somewhere.
-    }
-
-
     return Scaffold(
         appBar: AppBar(
           title: const Text('Book Wishlist'),
@@ -62,11 +68,11 @@ class _WishlistState extends State<WishlistPage> {
            Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => const WishlistFormPage(),
+                builder: (context) => WishlistFormPage(request),
               ),
             );
           },
-          child: const Icon(Icons.add),
+          child: Icon(Icons.add),
         ),
         body: FutureBuilder(
             future: wishlistItems,

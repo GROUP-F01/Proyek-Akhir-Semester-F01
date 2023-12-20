@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:literaloka/models/books.dart';
 import 'package:literaloka/widgets/left_drawer.dart';
-import 'package:literaloka/wishlist/wishlist.dart';
+import 'package:literaloka/wishlist/screens/wishlist.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
-import 'package:provider/provider.dart';
 class WishlistFormPage extends StatefulWidget {
+  final CookieRequest request;
 
-  const WishlistFormPage({Key? key}) : super(key: key);
+  const WishlistFormPage(this.request, {Key? key}) : super(key: key);
 
   @override
-  State<WishlistFormPage> createState() => _WishlistFormPageState();
+  State<WishlistFormPage> createState() => _WishlistFormPageState(request);
 }
 
 class _WishlistFormPageState extends State<WishlistFormPage> {
@@ -20,6 +20,9 @@ class _WishlistFormPageState extends State<WishlistFormPage> {
   String _reason = "";
   int _dropdownValue = -1;
   List<Books> lb = [];
+  final CookieRequest request;
+
+  _WishlistFormPageState(this.request);
 
   @override
   void initState() {
@@ -71,8 +74,6 @@ class _WishlistFormPageState extends State<WishlistFormPage> {
 
   @override
   Widget build(BuildContext context) {
-    final request = context.watch<CookieRequest>();
-
     return Scaffold(
       appBar: AppBar(
         title: const Center(
@@ -80,15 +81,15 @@ class _WishlistFormPageState extends State<WishlistFormPage> {
             'LiteraLoka',
           ),
         ),
-        backgroundColor: Colors.indigo,
-        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromRGBO(78,217,148,1),
+        foregroundColor: Colors.black,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => const WishlistPage(),
+                builder: (context) => WishlistPage(request),
               ),
             );
           },
@@ -136,8 +137,8 @@ class _WishlistFormPageState extends State<WishlistFormPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
                         'Choose your Favorite Book:',
                         style: TextStyle(
@@ -154,13 +155,13 @@ class _WishlistFormPageState extends State<WishlistFormPage> {
                             _dropdownValue = value!;
                           });
                         },
-                        items: [const DropdownMenuItem<int>(
-                            value: -1,
+                        items: [DropdownMenuItem<int>(
                             child: Text('-'),
+                            value: -1,
                           ), ...lb.map(
                           (book) => DropdownMenuItem<int>(
-                            value: book.pk,
                             child: Text(book.fields.title),
+                            value: book.pk,
                           ),
                         ).toList()],
                         value: _dropdownValue,
@@ -168,8 +169,8 @@ class _WishlistFormPageState extends State<WishlistFormPage> {
                         isExpanded: true,
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
                         'Reason:',
                         style: TextStyle(
@@ -214,7 +215,7 @@ class _WishlistFormPageState extends State<WishlistFormPage> {
                                 }));
                                Navigator.pushReplacement(
                                   context,
-                                  MaterialPageRoute(builder: (context) => const WishlistPage()),
+                                  MaterialPageRoute(builder: (context) => WishlistPage(request)),
                               );
                             }
                           },

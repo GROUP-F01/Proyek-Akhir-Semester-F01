@@ -16,12 +16,12 @@ class WishlistCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.black,
+            color: Colors.green,
             spreadRadius: 2,
-            blurRadius: 10,
+            blurRadius: 5,
             offset: Offset(5, 5),
           ),
         ],
@@ -34,14 +34,13 @@ class WishlistCard extends StatelessWidget {
         children: [
           Image.network(
             bookImageUrl,
-            width: double.infinity, // Make the image take the full width
-            height: 200, // Set the desired height of the image
-            fit: BoxFit.cover, // Ensure the image covers the entire space
+            width: 200,
+            height: 300, 
           ),
           const SizedBox(height: 10),
           Text(
             "Category: $bookCategory",
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.bold,
             ),
@@ -49,15 +48,15 @@ class WishlistCard extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             "Title: $bookTitle",
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 30.0,
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 10),
           Text(
             "Reason: $reason",
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.bold,
             ),

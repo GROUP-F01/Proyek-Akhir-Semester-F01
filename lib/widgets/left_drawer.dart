@@ -6,7 +6,7 @@ import 'package:literaloka/main/menu.dart';
 import 'package:literaloka/resensi/screens/all_resensi.dart';
 import 'package:literaloka/review/screens/review.dart';
 import 'package:literaloka/user/login.dart';
-import 'package:literaloka/wishlist/wishlist.dart';
+import 'package:literaloka/wishlist/screens/wishlist.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
@@ -78,7 +78,7 @@ class LeftDrawer extends StatelessWidget {
                 Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const WishlistPage(),
+                  builder: (context) => WishlistPage(request),
                 ),
               );
               } else {
