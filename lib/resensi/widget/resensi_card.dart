@@ -69,7 +69,7 @@ class ResensiCard extends StatelessWidget {
                           Container(
                             alignment: Alignment.center,
                             width: screenWidth * 0.5,
-                            height: screenHeight * 0.25,
+                            height: screenHeight * 0.2,
                             child: Column(children: [
                               Text(
                                 snapshot.data!.fields.title,

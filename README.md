@@ -29,7 +29,7 @@ Modul ini hanya dapat digunakan oleh user yang sedang login. Pada halaman wishli
 Modul ini hanya dapat digunakan oleh user yang sedang login untuk menulis resensi. Modul ini akan menampilkan halaman yang berisi daftar semua buku yang ada di katalog, dimana user dapat membuat resensi mereka terhadap suatu buku dengan mengklik buku spesifik mulai menulis pada form yang telah disiapkan. Resensi yang sudah ditulis user akan terlihat di bagian buku tersebut beserta resensi user-user lainnya.
 
 ### 🗣️ Review - Hilmy
-Modul ini hanya dapat digunakan oleh user yang sedang login. Modul ini bertujuan untuk menampilkan urutan buku-buku terbaik menurut user yang dinilai dari rating yang diberikan untuk buku tersebut. Pada modul ini user dapat memberi rating sekaligus menulis komentar singkat untuk buku tersebut.
+Modul ini hanya dapat digunakan oleh user yang sedang login. Modul ini bertujuan untuk menampilkan buku-buku beserta ratingnya dari user. Pada modul ini user dapat memberi rating sekaligus menulis komentar singkat (review) untuk buku tersebut.
 
 ## Peran Aplikasi
 | Role  | Description |
@@ -45,3 +45,9 @@ Modul ini hanya dapat digunakan oleh user yang sedang login. Modul ini bertujuan
 
 ## Tautan Berita Acara
 [Tautan Berita Acara](https://docs.google.com/spreadsheets/d/1OgDLNwG6hoevTCDRE_hrmAe9ShIobUsRR0xR4fEhtlg/edit#gid=0)
+
+## Tautan App Center
+[![Build status](https://build.appcenter.ms/v0.1/apps/e1e016da-ac13-4b4e-8a39-e5ec20d6f219/branches/main/badge)](https://appcenter.ms)
+
+## Link Download App Center
+https://install.appcenter.ms/orgs/F01/apps/Literaloka/releases/1
