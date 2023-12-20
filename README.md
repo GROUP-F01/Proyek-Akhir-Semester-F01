@@ -13,8 +13,9 @@ LiteraLoka merupakan aplikasi yang berfokus kepada penjualan buku untuk dapat me
 
 ## 📁 Daftar dan Pembagian Tugas Modul
 Berikut ini fitur-fitur yang tersedia di LiteraLoka:
-### 🗃️ Main Page - Nando
+### 🗃️ Main Page dan Autentikasi - Nando
 Homepage adalah modul yang akan menjadi halaman utama aplikasi. Pada halaman ini, akan ditampilkan seluruh dataset buku dan seluruh halaman lainnya akan terintegrasi melalui halaman aplikasi ini. Halaman ini juga akan menerapkan filter.
+Autentikasi adalah modul yang menghandle login dan logout user, user juga bisa melakukan registrasi akun pada modul ini.
 
 ### 💰 Penjualan Buku User - Chika
 Modul ini hanya dapat digunakan oleh user yang sedang login untuk menjual buku mereka ke LiteraLoka. Pada page penjualan buku, user dapat menjual buku dengan cara menginput judul, tahun terbit, dan lainnya pada form pengisian. Pada form ini user juga dapat menginput foto dari buku yang akan dijual. Setelah submit form, buku akan ditampilkan pada dataset penjualan.
@@ -50,4 +51,4 @@ Modul ini hanya dapat digunakan oleh user yang sedang login. Modul ini bertujuan
 [![Build status](https://build.appcenter.ms/v0.1/apps/e1e016da-ac13-4b4e-8a39-e5ec20d6f219/branches/main/badge)](https://appcenter.ms)
 
 ## Link Download App Center
-https://install.appcenter.ms/orgs/F01/apps/Literaloka/releases/1
+https://install.appcenter.ms/orgs/f01/apps/literaloka/distribution_groups/public
