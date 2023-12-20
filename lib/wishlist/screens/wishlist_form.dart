@@ -43,7 +43,7 @@ class _WishlistFormPageState extends State<WishlistFormPage> {
   }
 
   Future<List<Books>> fetchProduct() async {
-    var url = Uri.parse('http://127.0.0.1:8000/get-buku/');
+    var url = Uri.parse('https://literaloka.my.id/get-buku/');
     var response = await http.get(
       url,
       headers: {"Content-Type": "application/json"},
@@ -208,7 +208,7 @@ class _WishlistFormPageState extends State<WishlistFormPage> {
                         onPressed: () async {
                             if (inputIsValid()) {
                                final response = await request.postJson(
-                                "http://127.0.0.1:8000/wishlist/add-wishlist-ajax/",
+                                "https://literaloka.my.id/wishlist/add-wishlist-ajax/",
                                 jsonEncode(<String, dynamic>{
                                     'book_id' : _dropdownValue,
                                     'reason' : _reason,

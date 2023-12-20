@@ -28,7 +28,7 @@ class _WishlistState extends State<WishlistPage> {
   // }
   Future<dynamic> fetchProduct() async {
     final response =
-        await request.get('http://127.0.0.1:8000/wishlist/get-wishlist/');
+        await request.get('https://literaloka.my.id/wishlist/get-wishlist/');
 
     List<Wishlist> listWishlist = [];
 
