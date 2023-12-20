@@ -82,7 +82,7 @@ class _ReviewPageState extends State<ReviewPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-            'Literaloka',
+            'LiteraLoka',
             style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,

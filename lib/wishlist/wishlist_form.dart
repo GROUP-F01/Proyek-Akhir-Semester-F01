@@ -136,8 +136,8 @@ class _WishlistFormPageState extends State<WishlistFormPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Text(
                         'Choose your Favorite Book:',
                         style: TextStyle(
@@ -154,13 +154,13 @@ class _WishlistFormPageState extends State<WishlistFormPage> {
                             _dropdownValue = value!;
                           });
                         },
-                        items: [DropdownMenuItem<int>(
-                            child: Text('-'),
+                        items: [const DropdownMenuItem<int>(
                             value: -1,
+                            child: Text('-'),
                           ), ...lb.map(
                           (book) => DropdownMenuItem<int>(
-                            child: Text(book.fields.title),
                             value: book.pk,
+                            child: Text(book.fields.title),
                           ),
                         ).toList()],
                         value: _dropdownValue,
@@ -168,8 +168,8 @@ class _WishlistFormPageState extends State<WishlistFormPage> {
                         isExpanded: true,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Text(
                         'Reason:',
                         style: TextStyle(

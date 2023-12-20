@@ -27,7 +27,7 @@ class LeftDrawer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Literaloka',
+                  'LiteraLoka',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,

@@ -71,13 +71,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Literaloka',
+          'LiteraLoka',
           style: TextStyle(
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: const Color.fromRGBO(78,217,148,1),
+        backgroundColor: const Color.fromRGBO(78, 217, 148, 1),
         foregroundColor: Colors.black,
       ),
       drawer: const LeftDrawer(),
@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(child: CircularProgressIndicator());
                 } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                  return const Center(
+                  return Center(
                     child: Text(
                       "Tidak ada buku yang tersedia",
                       style: TextStyle(color: Color(0xff59A5D8), fontSize: 20),
@@ -164,20 +164,20 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                            const SizedBox(height: 8),
+                            Text(
+                              "Author: ${filteredList[index].fields.author}",
+                              textAlign: TextAlign.center, // Center the text
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              "Language: ${filteredList[index].fields.lang}",
+                              textAlign: TextAlign.center, // Center the text
+                            ),
                           ],
                         ),
                         subtitle: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(height: 8),
-                                Text("Author: ${filteredList[index].fields.author}"),
-                                const SizedBox(height: 8),
-                                Text(" || Language: ${filteredList[index].fields.lang}"),
-                              ],
-                            ),
                             const SizedBox(height: 8),
                             Text(filteredList[index].fields.description),
                             const SizedBox(height: 8),
