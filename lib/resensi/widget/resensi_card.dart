@@ -62,7 +62,7 @@ class ResensiCard extends StatelessWidget {
                               height: screenHeight * 0.2,
                               child: Image.network(
                                 snapshot.data!.fields.imageUrl,
-                                fit: BoxFit.cover,
+                                fit: BoxFit.scaleDown,
                                 width: double.infinity,
                               )),
                           SizedBox(width: screenWidth * 0.05),
@@ -87,14 +87,20 @@ class ResensiCard extends StatelessWidget {
                                   fontSize: 15,
                                 ),
                               ),
-                              Text(
-                                resensi.fields.resensi.length > 200
-                                    ? "${resensi.fields.resensi.substring(0, 300)}..."
-                                    : resensi.fields.resensi,
-                                textAlign: TextAlign.justify,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 10,
+                              Container(
+                                width: screenWidth * 0.5,
+                                height: screenHeight * 0.2,
+                                child: SingleChildScrollView(
+                                  child: Text(
+                                    resensi.fields.resensi.length > 200
+                                        ? "${resensi.fields.resensi.substring(0, 200)}..."
+                                        : resensi.fields.resensi,
+                                    textAlign: TextAlign.justify,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 10,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ]),
@@ -160,7 +166,7 @@ class ResensiCard extends StatelessWidget {
                                     height: screenHeight * 0.2,
                                     child: Image.network(
                                       snapshot.data!.fields.imageUrl,
-                                      fit: BoxFit.cover,
+                                      fit: BoxFit.scaleDown,
                                       width: double.infinity,
                                     )),
                                 SizedBox(height: screenHeight * 0.02),
@@ -249,8 +255,7 @@ class ResensiCard extends StatelessWidget {
                           ),
                         );
                       }
-                    }
-                ),
+                    }),
               ],
             ),
           ),
