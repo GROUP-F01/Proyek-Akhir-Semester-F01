@@ -88,7 +88,7 @@ class ResensiCard extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                resensi.fields.resensi.length > 300
+                                resensi.fields.resensi.length > 200
                                     ? "${resensi.fields.resensi.substring(0, 300)}..."
                                     : resensi.fields.resensi,
                                 textAlign: TextAlign.justify,
